@@ -1,0 +1,30 @@
+<div class="container">
+	<h1>Todo List</h1>
+
+	<a [routerLink]="['/todo-create']" class="btn btn-default">
+		CREATE A NEW TODO
+	</a>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Description</th>
+				<th>Updated Date</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let todo of todos">
+				<td><a type="button" [routerLink]="['/todo-details', todo._id]">{{ todo.title }}</a></td>
+				<td>{{ todo.author }}</td>
+				<td>{{ todo.description }}</td>
+				<td>{{ todo.updated_date }}</td>
+				<td><a class="btn btn-default" [routerLink]="['/todo-details', todo._id]">VIEW</a></td>
+				<td><a class="btn btn-default" [routerLink]="['/todo-edit', todo._id]">EDIT</a></td>
+				<td><a class="btn btn-default" [routerLink]="['/todo-delete', todo._id]">DELETE</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

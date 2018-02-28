@@ -1,0 +1,26 @@
+<div class="container">
+	<h1>Todo Detail</h1>
+	<dl class="list">
+
+		<dt>Title</dt>
+		<dd>{{ todo.title }}</dd>
+
+		<dt>Author</dt>
+		<dd>{{ todo.author }}</dd>
+
+		<dt>Description</dt>
+		<dd>{{ todo.description }}</dd>
+
+
+		<dt>Updated Date</dt>
+		<dd>{{ todo.updated_date }}</dd>
+	</dl>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<a [routerLink]="['/todo-edit', todo._id]" class="btn btn-success">EDIT</a>
+		<button class="btn btn-danger" type="button"
+			(click)="deleteTodo(todo._id)">DELETE</button>
+	</div>
+</div>
